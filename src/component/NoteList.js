@@ -1,13 +1,23 @@
-const NotesList = ({ notes, onDelete }) => (
+
+const NotesList = ({ notes, onDelete, onNoteClick }) => (
   <div className="notes-list">
     {notes?.map((note) => {
       const parsedNote = typeof note === "string" ? JSON.parse(note) : note;
-      console.log("Parsed note:", parsedNote); // Log each parsed note
       return (
-        <div key={parsedNote.id} className="note">
+        <div
+          key={parsedNote.id}
+          className="note"
+          onClick={() => onNoteClick(parsedNote)}
+        >
           <h3 className="note-title">{parsedNote.title || "Untitled"}</h3>
-          <p className="note-text">{parsedNote.content || "No content available"}</p>
-          <button onClick={() => onDelete(parsedNote.id)} className="note-delete">
+          <p className="note-text">{parsedNote.content}</p>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onDelete(parsedNote.id);
+            }}
+            className="note-delete"
+          >
             &times;
           </button>
         </div>
@@ -16,5 +26,6 @@ const NotesList = ({ notes, onDelete }) => (
   </div>
 );
 
-  export default NotesList;
+export default NotesList;
+
   

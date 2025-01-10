@@ -9,6 +9,13 @@ export const fetchNotes = async () => {
 };
 
 
+export const fetchNotesForDate = async (date) => {
+  const response = await fetch(`${API_URL}/notes/${date}`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch notes for the selected date');
+  }
+  return response.json();
+};
 
 
 export const createNote = async ({ title, text }) => {

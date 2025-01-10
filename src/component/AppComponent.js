@@ -22,7 +22,6 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Sticky Notes</h1>
       <NoteForm onSubmit={addNote} />
       <NotesList notes={notes} onDelete={removeNote} />
     </div>

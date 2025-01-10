@@ -1,0 +1,37 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="200"
+  height="200"
+  viewBox="0 0 200 200"
+  fill="none"
+>
+  <!-- Notebook Background -->
+  <rect
+    x="20"
+    y="40"
+    width="160"
+    height="120"
+    rx="10"
+    fill="#A78BFA"
+  />
+  
+  <!-- Notebook Lines -->
+  <line x1="40" y1="60" x2="160" y2="60" stroke="#F3E8FF" stroke-width="3" />
+  <line x1="40" y1="80" x2="160" y2="80" stroke="#F3E8FF" stroke-width="3" />
+  <line x1="40" y1="100" x2="160" y2="100" stroke="#F3E8FF" stroke-width="3" />
+  
+  <!-- Spine -->
+  <rect
+    x="20"
+    y="40"
+    width="10"
+    height="120"
+    fill="#7C3AED"
+  />
+  
+  <!-- Heart Accent -->
+  <path
+    d="M100 130c6 0 10-5 10-10s-4-10-10-10-10 5-10 10 4 10 10 10z"
+    fill="#F3E8FF"
+  />
+</svg>
