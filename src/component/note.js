@@ -1,5 +1,5 @@
 import React from "react";
-import { FaTrashAlt } from "react-icons/fa"; // Trash icon for the delete button
+import { FaTrashAlt } from "react-icons/fa";
 
 const Note = ({ note, onDelete }) => (
   <div className="note" onDoubleClick={() => onDelete(note.id)}>
