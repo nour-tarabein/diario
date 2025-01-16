@@ -313,6 +313,22 @@ body {
   bottom: 10px;
   left: 10px;
   right: 10px;
+  padding: 5px;
+}
+
+.note-delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ff4b4b;
+  padding: 5px;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+.note-delete:hover {
+  transform: scale(1.1);
+  color: #ff0000;
 }
 
 .note-like {
@@ -344,4 +360,27 @@ body {
   font-size: 0.9rem;
   margin-left: 4px;
   color: #666;
+}.note-like {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #666;
+  padding: 5px;
+  transition: all 0.2s ease;
+}
+
+.note-like.liked {
+  color: #ff4b4b;
+}
+
+.note-like:hover {
+  transform: scale(1.1);
+}
+
+.like-count {
+  font-size: 0.9rem;
+  margin-left: 4px;
 }

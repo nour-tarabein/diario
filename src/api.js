@@ -59,10 +59,6 @@ export const createNote = async ({ title, text }) => {
 };
 
 
-
-
-
-
 export const updateNote = async (id, text, title) => {
   const authCode = localStorage.getItem('authCode');
   const response = await fetch(`${API_URL}/notes/${id}`, {
@@ -91,4 +87,41 @@ export const deleteNote = async (id) => {
   if (!response.ok) {
     throw new Error('Failed to delete note');
   }
+};
+// api.js
+export const likeNote = async (noteId) => {
+  const authCode = localStorage.getItem('authCode');
+  const response = await fetch(`${API_URL}/notes/likes`, {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+          'x-auth-code': authCode
+      },
+      body: JSON.stringify({ noteId })
+  });
+  if (!response.ok) {
+      throw new Error('Failed to like note');
+  }
+  return response.json();
+};
+
+export const getLikedNotes = async () => {
+  const authCode = localStorage.getItem('authCode');
+  const response = await fetch(`${API_URL}/notes/likes`, {
+      headers: {
+          'x-auth-code': authCode
+      }
+  });
+  if (!response.ok) {
+      throw new Error('Failed to get liked notes');
+  }
+  return response.json();
+};
+
+export const getLikeCount = async (noteId) => {
+  const response = await fetch(`${API_URL}/notes/${noteId}/likes`);
+  if (!response.ok) {
+      throw new Error('Failed to get like count');
+  }
+  return response.json();
 };
